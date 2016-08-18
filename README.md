@@ -1,4 +1,4 @@
-# sensate [![Build][travis-image]][travis-url] [![NPM][npm-image]][npm-url] [![Coverage][cov-image]][cov-url]
+# sensate [![Build][travis-image]][travis-url] [![Coverage][cov-image]][cov-url] [![NPM][npm-image]][npm-url]
 
 > An extensible bot framework that makes sense.
 
