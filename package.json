@@ -1,9 +1,10 @@
 {
   "name": "sensate",
-  "version": "1.0.0",
-  "description": "extensible bot framework",
+  "version": "0.0.1",
+  "description": "An extensible bot framework that makes sense.",
   "scripts": {
-    "test": "jest"
+    "test": "make test",
+    "coverage": "make test-cov"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
   },
   "homepage": "https://github.com/clooth/sensate#readme",
   "devDependencies": {
-    "jest-cli": "^14.1.0"
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "isparta": "^4.0.0",
+    "mocha": "^3.0.2"
   }
 }
