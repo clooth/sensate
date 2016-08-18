@@ -5,12 +5,12 @@ MAKEFLAGS = -j1
 BIN = node_modules/.bin
 
 # The commands we use for testing and coverage information
-ISPARTA_CMD = $(BIN)/isparta cover
+ISTANBUL_CMD = $(BIN)/istanbul
 MOCHA_CMD = node_modules/mocha/bin/_mocha
 STANDARD_CMD = $(BIN)/standard
 
 # Available commands
-.PHONY: test test-cov lint
+.PHONY: test test-cov test-cov-level lint
 
 # Run all tests
 test:
@@ -19,7 +19,12 @@ test:
 # Generate coverage information
 test-cov:
 	rm -rf coverage
-	$(ISPARTA_CMD) --include-all-sources --report lcov --report html $(MOCHA_CMD) -- test
+	$(ISTANBUL_CMD) cover $(MOCHA_CMD)
+
+# Check overall code coverage percent
+test-cov-level:
+	make test-cov
+	$(ISTANBUL_CMD) check-coverage --statements 100 --functions 100 --lines 100 --branches 100
 
 # Lint current source code
 lint:
