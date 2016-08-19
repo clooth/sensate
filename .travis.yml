@@ -20,8 +20,8 @@ matrix:
       env: COVERAGE=true
 
 before_install:
-  - "[ $COVERAGE == false ] || npm install codecov.io"
+  - "[ $COVERAGE == false ] || npm install coveralls"
 
 after_script:
   - "[ $COVERAGE == false ] || npm run coverage"
-  - "[ $COVERAGE == false ] || cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js && rm -rf ./coverage"
+  - "[ $COVERAGE == false ] || cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"

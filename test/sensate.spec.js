@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Sensate, { Gateway } from '../lib'
+import Sensate, { Gateway } from '../src'
 
 describe('Sensate', () => {
   describe('initialization', () => {
