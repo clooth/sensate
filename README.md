@@ -16,6 +16,21 @@ Sensate provides the foundation for creating modular plugins that can each have 
 - [ ] IRC
 - [ ] Discord
 
+## Tasks
+
+There are some Makefile commands (also linked from package.json) that you can run tests and coverage tools with.
+
+```bash
+# Run all tests with mocha
+make test
+# Generate coverage information
+make test-cov
+# Generate coverage information and run level checks against 100% coverage
+make test-cov-level
+# Run standardjs on current source tree
+make lint
+```
+
 ## Testing
 
 Sensate uses Mocha with Chai for testing and Isparta for coverage information.
