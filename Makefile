@@ -5,10 +5,11 @@ MAKEFLAGS = -j1
 BIN = node_modules/.bin
 
 # Commands
-ISTANBUL_CMD = $(BIN)/istanbul
 MOCHA_CMD = node_modules/mocha/bin/_mocha
+NYC_CMD = $(BIN)/nyc
 STANDARD_CMD = $(BIN)/standard
 BABEL_CMD = $(BIN)/babel
+FLOW_CMD = $(BIN)/flow
 
 # Make commands
 .PHONY: test test-cov test-cov-level lint build
@@ -20,16 +21,15 @@ test:
 # Generate coverage information
 test-cov:
 	rm -rf coverage
-	$(ISTANBUL_CMD) cover $(MOCHA_CMD)
-
-# Check overall code coverage percent
-test-cov-level:
-	make test-cov
-	$(ISTANBUL_CMD) check-coverage --statements 100 --functions 100 --lines 100 --branches 100
+	$(NYC_CMD) --reporter=lcov npm test
 
 # Lint current source code
 lint:
 	$(STANDARD_CMD)
+
+# Check flowtype
+flow:
+	$(FLOW_CMD)
 
 # Build the library with babel
 build:
