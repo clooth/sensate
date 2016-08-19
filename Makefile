@@ -16,12 +16,12 @@ FLOW_CMD = $(BIN)/flow
 
 # Run all tests
 test:
-	node $(MOCHA_CMD) test
+	NODE_ENV=test node $(MOCHA_CMD) test --reporter=spec
 
 # Generate coverage information
 test-cov:
 	rm -rf coverage
-	$(NYC_CMD) --reporter=lcov npm test
+	NODE_ENV=test $(NYC_CMD) --reporter=lcov npm test
 
 # Lint current source code
 lint:
@@ -33,4 +33,4 @@ flow:
 
 # Build the library with babel
 build:
-	$(BABEL_CMD) lib --out-dir build
+	$(BABEL_CMD) src --out-dir lib
