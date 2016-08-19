@@ -17,6 +17,11 @@
   "bugs": "https://github.com/sensate-framework/sensate/issues",
   "homepage": "https://github.com/sensate-framework/sensate#readme",
   "author": "Nico Hämäläinen <nico@sizeof.io>",
+  "keywords": [
+    "bot",
+    "chatbot",
+    "framework"
+  ],
   "license": "MIT",
   "pre-commit": {
     "silent": true,
@@ -47,7 +52,7 @@
   "dependencies": {
     "es6-enum": "^1.0.3",
     "eventemitter3": "^1.2.0",
-    "tracer": "^0.8.3"
+    "winston": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
