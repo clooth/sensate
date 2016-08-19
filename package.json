@@ -52,9 +52,10 @@
     ]
   },
   "dependencies": {
-    "istanbul": "^1.1.0-alpha.1"
     "es6-enum": "^1.0.3",
     "eventemitter3": "^1.2.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "tracer": "^0.8.3",
   },
   "config": {
     "commitizen": {
