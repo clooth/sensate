@@ -1,5 +1,6 @@
+/** @flow */
 /** @module sensate */
-import Gateway, { Event } from './gateway'
+import Gateway, { Event } from './components/gateway'
 import logger from './utils/logger'
 
 /**
@@ -7,12 +8,18 @@ import logger from './utils/logger'
  */
 export default class Sensate {
   /**
+   * The Gateway used by this instance
+   * @type {Gateway}
+   */
+  gateway: Gateway
+
+  /**
    * Create a new Sensate instance with a given Gateway
    * @param {Gateway} gateway The Gateway to use for connection
    */
-  constructor (gateway) {
+  constructor (gateway: Gateway) {
     if (!gateway || gateway instanceof Gateway === false) {
-      const error = `Invalid Gateway ${gateway} when initializing Sensate.`
+      const error = `Invalid Gateway ${gateway.constructor.name} when initializing Sensate.`
       logger.error(error)
       throw new Error(error)
     }

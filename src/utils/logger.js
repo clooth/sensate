@@ -1,8 +1,10 @@
+/** @flow */
 /** @module utils/logger */
 import Winston from 'winston'
 
 let logger = null
 
+/* istanbul ignore if */
 if (process.env.NODE_ENV !== 'test') {
   logger = new Winston.Logger({
     transports: [

@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import Gateway, { Event } from '../lib/gateway'
+import { Event, Gateway } from '../../src'
 
 describe('Gateway', () => {
   describe('Core', () => {
@@ -10,7 +10,7 @@ describe('Gateway', () => {
         optionFoo: 123
       })
 
-      expect(gateway.opts.optionOne).to.be.equal(true)
+      expect(gateway.config.optionOne).to.be.equal(true)
     })
   })
 
@@ -22,6 +22,17 @@ describe('Gateway', () => {
 
       expect(ev1).to.not.equal(ev2)
       expect(ev1).to.equal(ev3)
+    })
+
+    it('should return a promise of type GatewayType', () => {
+      const gateway = new Gateway({
+        value: true
+      })
+
+      return gateway.connect()
+        .then(r => {
+          expect(r).to.be.an.instanceof(Gateway)
+        })
     })
   })
 })

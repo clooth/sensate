@@ -21,7 +21,7 @@ test:
 # Generate coverage information
 test-cov:
 	rm -rf coverage
-	NODE_ENV=test $(NYC_CMD) --reporter=lcov npm test
+	NODE_ENV=test $(NYC_CMD) --reporter=lcov --reporter=html npm test
 
 # Lint current source code
 lint:
