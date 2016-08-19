@@ -1,16 +1,17 @@
 # Prints messages giving details on sub-commands
 MAKEFLAGS = -j1
 
-# Node's bin directory
+# Paths
 BIN = node_modules/.bin
 
-# The commands we use for testing and coverage information
+# Commands
 ISTANBUL_CMD = $(BIN)/istanbul
 MOCHA_CMD = node_modules/mocha/bin/_mocha
 STANDARD_CMD = $(BIN)/standard
+BABEL_CMD = $(BIN)/babel
 
-# Available commands
-.PHONY: test test-cov test-cov-level lint
+# Make commands
+.PHONY: test test-cov test-cov-level lint build
 
 # Run all tests
 test:
@@ -29,3 +30,7 @@ test-cov-level:
 # Lint current source code
 lint:
 	$(STANDARD_CMD)
+
+# Build the library with babel
+build:
+	$(BABEL_CMD) lib --out-dir build
