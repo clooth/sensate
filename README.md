@@ -1,41 +1,34 @@
 # sensate [![Build][travis-image]][travis-url] [![Coverage][cov-image]][cov-url] [![NPM][npm-image]][npm-url]
 
-> An extensible bot framework that makes sense.
+> The no tears extensible bot framework.
 
 ## Features
 
-### Plugins
+### Gateways
 
-Sensate provides the foundation for creating modular plugins that can each have multiple "action" handlers for separating related but separate functionality per plugin.
+Gateways are objects that manage the connection and communication with an online service. They're used to send, receive and handle messages.
 
-## Gateways
+#### Example Gateways
 
-- [ ] Slack
-- [ ] Facebook
-- [ ] Telegram
+Our current roadmap for gateways is as follows:
+
 - [ ] IRC
+- [ ] Slack
 - [ ] Discord
+- [ ] Facebook Messenger
+- [ ] Telegram
+- [ ] Twilio
 
-## Tasks
+### Agents
 
-There are some Makefile commands (also linked from package.json) that you can run tests and coverage tools with.
+Agents are objects that namespace one or more command listeners for a Sensate. You can think of them as plugins, but they're more like collections of plugins.
 
-```bash
-# Run all tests with mocha
-make test
-# Generate coverage information
-make test-cov
-# Generate coverage information and run level checks against 100% coverage
-make test-cov-level
-# Run standardjs on current source tree
-make lint
-```
+#### Example Agents
 
-## Testing
-
-Sensate uses Mocha with Chai for testing and Isparta for coverage information.
-
-The full test suite is run actively on travis-ci from where its coverage information is published to codecov.io.
+- Toggl: Providing a variety of commands for creating, listing and tracking time entries.
+- Dictionary: Providing synonyms, antonyms, definitions etc. for given words.
+- IMDB: Providing information about actors, movies, directors etc.
+- Random: Providing dice rolls, random generated names, colors, etc.
 
 ## Contributing
 
