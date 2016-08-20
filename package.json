@@ -1,6 +1,6 @@
 {
   "name": "@sensate/sensate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An extensible bot framework that makes sense.",
   "main": "lib/index.js",
   "scripts": {
