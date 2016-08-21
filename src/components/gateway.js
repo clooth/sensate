@@ -5,6 +5,7 @@ import EventEmitter from 'eventemitter3'
 import request from 'request-promise-native'
 import WebSocket from 'ws'
 import logger from '../utils/logger'
+import { Channel, Message, User } from '../models'
 
 /**
  * Events emitted by Gateways
@@ -27,6 +28,10 @@ export const Event = Enum(
    * Gateway is ready to accept data
    */
   'READY',
+  /**
+   * Gateway received a message
+   */
+  'MESSAGE',
   /**
    * Gateway successfully connected to its websocket
    */
@@ -52,17 +57,39 @@ export default class Gateway extends EventEmitter {
   config: { [key: string]: any}
 
   /**
-   * Create a new Gateway instance with given options
-   * @param {object} config The config for the gateway
+   * The channels the gateway is connected to
+   * @type {Array<Channel>}
+   */
+  channels: [Channel]
+
+  /**
+   * The messages the gateway has received
+   * @type {Array<Message>}
+   */
+  messages: [Message]
+
+  /**
+   * The users the gateway is aware of
+   * @type {Array<User>}
+   */
+  users: [User]
+
+  /**
+   * Create a new Gateway
+   * @param {object} config The configuration for the gateway
    */
   constructor (config: ?{ [key: string]: any }) {
     super()
+
     this.config = config || {}
+    this.channels = []
+    this.messages = []
+    this.users = []
   }
 
   /**
    * Connect the gateway to its service
-   * NOTE: This is just a dummy connection.
+   * NOTE: Required method in all gateways.
    * @return {Promise<Gateway>} A Promise with the gateway after connection
    */
   connect (): Promise<Gateway> {
@@ -74,6 +101,36 @@ export default class Gateway extends EventEmitter {
       // Resolve the promise
       resolve(this)
     })
+  }
+
+  /**
+   * Send a text message to a channel
+   * @param {Channel} channel The channel to send the message to
+   * @param {string}  text    The message to send
+   * @return {Promise<Gateway>} A promise with the gateway that completes after message sent
+   */
+  sendChannelMessage (channel: Channel, text: string): Promise<Gateway> {
+    return Promise.resolve(this)
+  }
+
+  /**
+   * Send a text message to a user
+   * @param {User}   user The user to send the message to
+   * @param {string} text The message to send
+   * @return {Promise<Gateway>} A promise with the gateway that completes after message sent
+   */
+  sendUserMessage (user: User, text: string): Promise<Gateway> {
+    return Promise.resolve(this)
+  }
+
+  /**
+   * Reply to a given message
+   * @param {Message} message The message to reply to
+   * @param {string}  text    The text to reply with
+   * @return {Promise<Gateway>} A promise with the gateway that completes after message sent
+   */
+  replyToMessage (message: Message, text: string): Promise<Gateway> {
+    return Promise.resolve(this)
   }
 
   /**

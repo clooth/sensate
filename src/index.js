@@ -1,6 +1,7 @@
 /** @flow */
 /** @module sensate */
 import Gateway, { Event } from './components/gateway'
+import { Channel, Message, User } from './models'
 import logger from './utils/logger'
 
 /**
@@ -29,10 +30,11 @@ export default class Sensate {
   }
 }
 
-/**
- * Export other components of the library
- */
+// Export all components
 export {
   Gateway,
-  Event
+  Event,
+  Channel,
+  Message,
+  User
 }
