@@ -12,9 +12,9 @@ Gateways are objects that manage the connection and communication with an online
 
 Our current roadmap for gateways is as follows:
 
+- [x] Discord
 - [ ] IRC
 - [ ] Slack
-- [ ] Discord
 - [ ] Facebook Messenger
 - [ ] Telegram
 - [ ] Twilio
@@ -32,11 +32,11 @@ Agents are objects that namespace one or more command listeners for a Sensate. Y
 
 ## Contributing
 
-Please open any issues or pull requests and I will look through them once I have the time. I'm open to most contributions but can be a bit picky about coding styles.
+Please open any issues or send pull requests and I will look through them.
 
-[npm-url]: https://npmjs.org/package/sensate
-[npm-image]: http://img.shields.io/npm/v/sensate.svg
-[travis-url]: http://travis-ci.org/clooth/sensate
-[travis-image]: http://travis-ci.org/clooth/sensate.svg?branch=master
-[cov-url]: https://codecov.io/gh/clooth/sensate
-[cov-image]: https://codecov.io/gh/clooth/sensate/branch/master/graph/badge.svg
+[npm-url]: https://npmjs.org/package/@sensate/sensate
+[npm-image]: http://img.shields.io/npm/v/@sensate/sensate.svg
+[travis-url]: http://travis-ci.org/sensate-framework/sensate
+[travis-image]: http://travis-ci.org/sensate-framework/sensate.svg?branch=master
+[cov-url]: https://coveralls.io/github/sensate-framework/sensate?branch=master
+[cov-image]: https://coveralls.io/repos/github/sensate-framework/sensate/badge.svg?branch=master
