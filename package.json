@@ -58,7 +58,7 @@
     "ws": "^1.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
