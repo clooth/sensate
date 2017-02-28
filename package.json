@@ -55,7 +55,7 @@
     "request": "^2.74.0",
     "request-promise-native": "^1.0.3",
     "winston": "^2.2.0",
-    "ws": "^1.1.1"
+    "ws": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
